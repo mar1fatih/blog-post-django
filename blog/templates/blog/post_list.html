@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Blog Post List</title>
-</head>
-<body>
-    <h1>Blog Posts</h1>
-    <ul>
+    <head>
+        <title>Django blog</title>
+    </head>
+    <body>
+        <header>
+            <h1><a href="/">Django Blog</a></h1>
+        </header>
         {% for post in posts %}
-            <li>{{ post.title }}</li>
+        <article>
+            <time>{{ post.published_at }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.content }}</p>
+        </article>
         {% endfor %}
-    </ul>
-</body>
+    </body>
 </html>
